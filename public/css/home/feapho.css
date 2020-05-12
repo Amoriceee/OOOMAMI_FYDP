@@ -1,0 +1,279 @@
+section.featured-content {
+  width: 100%;
+  background-image: url('/img/lemoo.png');
+  background-size: cover;
+  height: 100vh;
+}
+section.featured-content > h1 {
+  font-size: 42px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  text-transform: capitalize;
+}
+@media screen and (min-width: 1025px) {
+  section.featured-content > h1 {
+    position: absolute;
+    top: 20px;
+    width: calc(100vw - 180px);
+  }
+}
+section.featured-content > h1 > a {
+  color: #ededb5;
+  font-weight: 500;
+}
+.container {
+  width: 100%;
+  position: relative;
+  margin-top: 40px;
+  opacity: 1;
+}
+@media screen and (min-width: 1025px) {
+  .container {
+    position: absolute;
+    top: 50%;
+    margin-top: -200px;
+    width: calc(100vw - 180px);
+  }
+}
+.con {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 0 auto;
+  transition: all 0.5s;
+  transition-delay: 0.1s;
+}
+.fea-pho {
+  position: relative;
+  width: 300px;
+  height: 440px;
+  overflow: hidden;
+  background-color: #eee;
+  border-radius:5px;
+  top: -20px;
+  float: left;
+  z-index: 2;
+  transition: all 0.5s;
+  box-shadow: 1px 1px 20px -5px rgba(0,0,0,0.5);
+}
+.pho {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius:5px ;
+}
+.pho > img {
+  width: 100%;
+  opacity: 0.95;
+  transition: all 0.5s;
+}
+.pho:hover > img {
+  transform: scale(1.4);
+}
+.rec-ing {
+  position: absolute;
+  width: 0px;
+  top: -10px;
+  left: 290px;
+  margin-left: 10px;
+  padding: 10px 0px;
+  height: 400px;
+  float: left;
+  border-radius: 5px;
+  z-index: 3;
+  box-shadow: 1px 1px  20px  -5px  rgba(0,0,0,0.2);
+  background: rgb(251,249,249);
+  background: -moz-linear-gradient(-45deg,  rgba(251,249,249,1) 28%, rgba(232,234,237,1) 100%);
+  background: -webkit-linear-gradient(-45deg,  rgba(251,249,249,1) 28%,rgba(232,234,237,1) 100%);
+  background: linear-gradient(135deg,  rgba(251,249,249,1) 28%,rgba(232,234,237,1) 100%);
+  transition: all 0.5s;
+  transition-delay: 0.7s;
+}
+.mins{
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+.smins {
+  position: relative;
+  float: left;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(181, 237, 237,0.8);
+  border-radius:50% ;
+  margin: 16px;
+  margin-bottom: 0px;
+  opacity: 0;
+  transition: all 0.5s;
+  transition-delay: 1s;
+}
+.smins > h3 {
+  font-size: 24px;
+  margin-top: 7px;
+  text-align: center;
+  color: white;
+  opacity: 0.9;
+}
+.smins > p {
+  font-size: 9px;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  opacity: 0.9;
+}
+.fea-desc {
+  position: absolute;
+  bottom: -185px;
+  height: 200px;
+  border-radius: 5px;
+  background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 68%,rgba(0,0,0,0.65) 100%,rgba(0,0,0,0.65) 101%);
+  width: 100%;
+  transition: all 0.5s;
+  transition-delay: 1.2s;
+  transition-delay: 0.7s;
+}
+.fea-desc > h3 {
+  margin-top: 50px;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+}
+.fea-desc > p {
+  color: #fff;
+  width: 80%;
+  text-align:justify;
+  font-size: 14px;
+  margin: 0 auto;
+}
+.cont_tabs {
+  position: relative;
+  float: left;
+  width: 410px;
+  height: 60px;
+  border-bottom: 3px solid #EDEDEC;
+}
+.cont_tabs > ul {
+  width: 300px;
+  background-color: #eee;
+}
+.cont_tabs > ul > li {
+  position: relative;
+  float: left;
+  width: 50%;
+  list-style: none;
+}
+.cont_tabs > ul > li > a {
+  border-top: 7px solid #ED346C;
+  position: relative;
+  display: block;
+  float: left;
+  padding-top: 15px;
+  color: #241C3E;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 14px;
+}
+.cont_tabs > ul > li:first-child > a
+{
+  border-top: 7px solid rgba(237, 52, 108, 0);
+  margin-top: 0px;
+  color: #9A96A4;
+  transition: all 0.5s;
+  transition: all 0.2s;
+}
+.cont_tabs > ul > li:first-child > a:hover {
+  border-top: 7px solid #ED346C;
+  padding-top: 15px;
+  color: #241C3E;
+  margin-top: 0px;
+}
+.open-fea-pho {
+  position: absolute;
+  right: -15px;
+  top:50%;
+}
+.open-fea-pho  > a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: #b5eded;
+  border-radius:50% ;
+  color: #fff;
+  box-shadow: 0px 0px 10px -2px #b5eded;
+  transition: all 0.5s;
+  transition: all 0.5s;
+  transform: rotate(180deg);
+}
+.open-fea-pho  > a > i {
+  margin: 3px 0px 0px 2px;
+}
+.rec-ing-main {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+#Recipie h3 {
+  font-size: 13px;
+  text-align: left;
+  line-height: 24px;
+  font-weight: 500;
+}
+#Recipie p {
+  font-size: 12px;
+  text-align: justify;
+  line-height: 18px;
+  font-weight: 300;
+  padding-left: 20px;
+  border-left: 2px solid black;
+}
+#Recipie p:last-child {
+  border-left: none;
+}
+#Ingredients p {
+  font-size: 18px;
+  text-align: center;
+  line-height: 28px;
+  font-weight: 500;
+}
+#Ingredients p span {
+  font-size: 12px;
+  font-weight: 300;
+}
+.prep-con {
+  position: relative;
+  width: 410px;
+}
+
+.con-a > .rec-ing  > .open-fea-pho > a {
+  transform: rotate(0deg);
+}
+.con-a > .rec-ing{
+  width: 420px;
+  left: 285px;
+  z-index: 1;
+  box-shadow: 15px 20px  70px  -5px  rgba(0,0,0,0.2);
+}
+.con-a {
+  width: 700px;
+}
+
+.con-a > .fea-pho {
+  box-shadow: 25px 10px 70px -5px rgba(0,0,0,0.3);
+}
+
+.con-a > .fea-pho > .mins > .smins {
+  opacity: 1;
+}
+
+.con-a  > .fea-pho > .serv {
+  opacity: 1;
+}
+
+.con-a > .fea-pho  > .fea-desc{
+  bottom: 0px;
+}

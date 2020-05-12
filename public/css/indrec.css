@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Nunito&display=swap');
+@font-face {
+  font-family: 'Cardo';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/49914/Cardo-Bold.woff) format("woff2");
+}
+@font-face {
+  font-family: 'Cardo';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/49914/Cardo-Regular.woff) format("woff2");
+}
+@font-face {
+  font-family: 'Cardo';
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/49914/Cardo-Italic.woff) format("woff2");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+section {
+  padding: 2em 0em;
+}
+section#filters {
+  height: 25vh;
+}
+section#rec_grid {
+  display: block;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.recipe h1,.recipe small {
+  font-variant: small-caps;
+  font-feature-settings: "liga";
+}
+@supports (font-feature-settings: "smcp") {
+  .recipe h1, .recipe small {
+    font-variant: normal;
+    font-feature-settings: "smcp", "liga";
+  }
+}
+.image_cover {
+  height: 220px;
+  width: 280px;
+  margin: 40px auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.main_block {
+  display: grid;
+  grid-template-columns: 25vw 75vw;
+  margin: 0 auto;
+}
+.recipe {
+  line-height: 1.6rem;
+  font-family: 'Cardo', sans-serif;
+  font-feature-settings: 'liga', "clig", 'pnum';
+}
+.recipe::after, .recipe:before {
+  display: block;
+  content: '\2042';
+  text-align: center;
+  margin-top: 3.2rem;
+  margin-bottom: 3.2rem;
+  font-size: 2rem;
+  color: #edb5b5;
+}
+.recipe h1 {
+  text-align: center;
+  margin-bottom: 1.6rem;
+  font-size: 2rem;
+}
+.recipe h2 {
+  font-style: italic;
+  text-align: center;
+  margin-top: -0.8rem;
+  margin-bottom: 2.4rem;
+}
+.recipe em {
+  font-style: italic;
+  font-feature-settings: 'liga', 'ss01', 'ss03';
+}
+.recipe .servings {
+  quotes: '(' ')';
+}
+.recipe .servings::before {
+  content: open-quote;
+}
+.recipe .servings::after {
+  content: close-quote;
+}
+.recipe .ingredients {
+  float: right;
+  max-width: 25vw;
+  margin-right: 1vw;
+  margin-left: 2vw;
+}
+.recipe .ingredients > li {
+  list-style: none;
+  text-align: right;
+}
+.recipe .ingredients > li > span {
+  font-weight: bolder;
+}
+.recipe .nutrition {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 60%;
+  margin: 20px auto;
+}
+.recipe .nutrition > li {
+  list-style: none;
+  border-top: 4px solid #edb5b5;
+  color: #d57877;
+  padding: 10px;
+  margin: 20px;
+  width: auto;
+  text-align: center;
+  font-size: 0.7em;
+  line-height: 20px;
+}
+
+.recipe .instructions {
+  width: 75vh;
+  float: right;
+  border-left: 1px solid black;
+}
+.recipe .instructions ol {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+.recipe .instructions li {
+  display: inline;
+}
+.recipe .instructions li span {
+  font-weight: bolder;
+}
+.information h3 {
+  margin-left: 12vw;
+}
+form.rb {
+  padding: 0.25em 0.5em;
+  position: fixed;
+  right: 0;
+  margin: 0 auto;
+  background: transparent;
+  border: 4px double #4a4a4a;
+  border-right: none;
+  color: #f1b8cb;
+  outline: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+form.sim {
+  padding: 0.25em 0.5em;
+  position: relative;
+  right: 0;
+  margin: 0 auto;
+  background: transparent;
+  color: #f1b8cb;
+  outline: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+}
+form button {
+  outline: none;
+  border: none;
+  background: transparent;
+}
+form button i {
+  font-size: 1.5em;
+  color: #4a4a4a;
+}
+form.rb button i.fa {
+  color: #edb5b5;
+}
+form button i.fa {
+  color: white;
+}
+form button i.far {
+  color: #4a4a4a;
+}
+form button i.fa:hover {
+  color: #4a4a4a;
+}
+form button i.far:hover {
+  color: #f1b8cb;
+}
+
+div.tdiv {
+  margin-top: 3.2rem;
+  margin-left: 2vw;
+  display: inline-block;
+}
+
+div.tdiv h2 {
+  text-align: left;
+  display: inline-block;
+  font-size: 12px;
+}
+
+div.tdiv button {
+  display: inline-block;
+  border: 1px solid #d57877;
+  color: #d57877;
+  margin: 0px 15px;
+  padding: 1em;
+  outline: none;
+  font-size: 10px;
+}
+section#sim {
+  padding-top: 0em;
+}
+div#sim_grid {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  width: 95%;
+  margin: 0 auto;
+}
+section h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.rec-body {
+  min-height: 100px;
+  width: 180px;
+  border-radius: 10px;
+  margin: 0 auto;
+  display: inline-block;
+  background-color: #f1b8cb;
+}
+.rec-body h2 {
+  text-align: left;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0 auto;
+  padding: 1em 0.5em 1em 1em;
+  color: #4a4a4a;
+  border-right: 1px solid white;
+  display: inline-block;
+  max-width: 100px;
+}
+.rec-body h2:hover {
+  color: white;
+}
+.rec-body a {
+  display: inline-block;
+}
+
+.rec-body a button {
+  padding: 0.5em 1.1em;
+  position: relative;
+  left: 0;
+  right: 0;
+  height: 40px;
+  margin: 0 auto;
+  border: none;
+  background: transparent;
+  color: #4a4a4a;
+  outline: none;
+  cursor: pointer;
+  z-index: 100;
+}
+.rec-body a button i {
+  line-height: 90px;
+  font-size: 1.5em;
+  color: #4a4a4a;
+}
+.rec-body a button i.fa {
+  color: #f6c662;
+}
+.rec-body a button i.far {
+  color: #4a4a4a;
+}
+.rec-body a button i.fa:hover {
+  color: #4a4a4a;
+}
+.rec-body a button i.far:hover {
+  color: #f6c662;
+}

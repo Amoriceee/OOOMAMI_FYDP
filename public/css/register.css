@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Nunito&display=swap');
+
+body {
+  background: #fdf7f7;
+}
+* {
+  font-family: 'Lato', sans-serif;
+  font-weight: lighter;
+  text-decoration: none;
+  outline: none;
+}
+.animated {
+  animation-duration: 4.5s;
+  animation-fill-mode: backwards;
+}
+/** SECTION A **/
+.container {
+  width: 325px;
+  height: 420px;
+  padding: 40px 15px;
+  margin: 15vh auto;
+  display: block;
+  border-radius: 15px;
+  text-align: center;
+}
+.top-logo {
+  width: 180px;
+  margin: 0 auto;
+}
+span {
+  display: block;
+  font-size: 9px;
+}
+
+input {
+  width: 98%;
+  height: 40px;
+  border: 1px solid grey;
+  outline: none;
+  margin: 10px auto;
+  text-align: center;
+  font-size: 16px;
+  background: #fbf0f0;
+  border-radius: 4px;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  float: left;
+  width: 25px;
+  height: 25px;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+.buttonbox {
+  margin: 0 auto;
+  overflow:auto;
+  display: block;
+}
+
+button {
+  width: 120px;
+  height: 40px;
+  border: none;
+  border-radius: 15px;
+  background: #edb5b5;
+  color: white;
+  font-size: 16px;
+  margin: 20px auto;
+}
+
+.ppcheck-text {
+  position: absolute;
+  margin-left: 25px;
+  margin-top: 12px;
+  font-weight: bolder;
+}
+
+a {
+  color: #edb5b5;
+}
+
+input.invalid {
+  background-color: white;
+}
+
+.tab {
+  display: none;
+}
+
+.tone {
+  height: 260px;
+  padding-top: 30px;
+}
+
+.ttwo {
+  height: 290px;
+}
+
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+.step.finish {
+  background-color: #edb5b5;
+}
+
+/** TAB 2: Privacy Policy **/
+.ppbox {
+  height: 250px;
+  text-align: justify;
+  overflow: scroll;
+}
+.ppbox p {
+  font-size: 0.8em;
+}
+@media screen and (min-width: 768px) {
+
+  .container {
+    width: 325px;
+    height: 420px;
+    border: 2px solid #f9e8e8;
+    background: #fbf0f0;
+  }
+
+  input {
+    width: 85%;
+  }
+
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px #fbf0f0 inset !important;
+}

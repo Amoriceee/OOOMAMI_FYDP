@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Nunito&display=swap');
+@import url('https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+  font-weight: 350;
+  text-decoration: none;
+}
+.area {
+  margin-top: 54px;
+  width: 100vw;
+  height: 100%;
+}
+nav {
+  font-family: 'Lato', sans-serif;
+  font-weight: lighter;
+  background-color: #eeeeee;
+  position: fixed;
+  height: 54px;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+  opacity: 1;
+  outline: none;
+  top: 0;
+}
+i.fas, i.fa {
+  display: inline-block;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #eeeeee;
+}
+nav li {
+  padding: 20px 0px;
+}
+nav li a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  color: #4a4a4a;
+}
+nav li>a:hover {
+  color: #edb5b5;
+}
+nav .menu {
+  max-height: 0;
+  transition: max-height .6s ease-out;
+}
+nav img {
+  height: 50px;
+  padding-left: 58px;
+}
+nav .mico {
+  padding: 22px 20px;
+  float: right;
+  display: inline-block;
+  position: relative;
+}
+nav .mico .nico {
+  display: block;
+  position: relative;
+  height: 2px;
+  width: 18px;
+  background: #f1b8cb;
+  color: transparent;
+}
+nav .mico .nico:before,
+nav .mico .nico:after {
+  content: '';
+  display: block;
+  position: absolute;
+  transition: all .3s ease-out;
+  height: 100%;
+  width: 100%;
+  background: #f1b8cb;
+}
+nav .mico .nico:before {
+  top: 6px;
+}
+nav .mico .nico:after {
+  top: -6px;
+}
+nav .mbtn {
+  display: none;
+  background: transparent;
+}
+nav .mbtn:checked ~ .menu {
+  max-height: 100vh;
+  height: 75vh;
+}
+nav .mbtn:checked ~ .mico .nico {
+  background: transparent;
+}
+nav .mbtn:checked ~ .mico .nico:before {
+  transform: rotate(-45deg);
+}
+nav .mbtn:checked ~ .mico .nico:after {
+  transform: rotate(45deg);
+}
+nav .mbtn:checked ~ .mico .nico:before,
+nav .mbtn:checked ~ .mico .nico:after {
+  top: 0;
+}
+.fo {
+  opacity: 1;
+}
+.dl {
+  display: none;
+}
+.active {
+  color: #edb5b5;
+}
+.activeB {
+  color: #edb5b5;
+}
+ul.logout {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  height: 20vh;
+}
+@media screen and (min-width: 1050px) {
+  .area {
+    margin-top: 0px;
+    margin-left: 180px;
+    float: left;
+    width: calc(100vw - 180px);
+  }
+  i.fas, i.fa {
+    display: inline-block;
+  }
+  nav {
+    text-align: left;
+    opacity: 1;
+  }
+  nav li {
+    float: left;
+    max-height: 100%;
+  }
+  nav li a {
+    padding: 2px 0px;
+  }
+  nav ul {
+    background: transparent;
+    margin-right: 10%;
+  }
+  nav .menu {
+    clear: none;
+    float: right;
+    max-height: 100%;
+  }
+  nav .mico {
+    display: none;
+  }
+
+  nav.main-menu {
+    background: #eeeeee;
+    border-right: 1px solid #e5e5e5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 180px;
+    z-index: 100;
+    overflow: hidden;
+    user-select:none;
+    box-shadow: 5px 0 20px -12px #333;
+  }
+  nav img {
+    height: auto;
+    width: 140px;
+    margin-top: 20px;
+    padding: 10px 20px;
+  }
+  nav ul, nav li {
+    outline: 0;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul {
+    margin-top: 40px;
+  }
+  .dl {
+    width: 20%;
+    height: 2px;
+    background: #434343;
+    margin: 10px auto;
+    border-radius: 20px;
+    opacity: 0.6;
+  }
+  nav .fa-2x {
+    font-size: 2em;
+  }
+  nav .fa, nav .far, nav .fas {
+    position: relative;
+    display: table-cell;
+    width: 60px;
+    height: 36px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+  }
+  .main-menu li {
+    position: relative;
+    display: block;
+  }
+  .main-menu li>a {
+    position:relative;
+    display:table;
+    border-spacing:0;
+    font-family: arial;
+    font-size: 14px;
+    text-decoration:none;
+    transition:all .1s linear;
+  }
+  .main-menu .nav-icon {
+    position: relative;
+    display: table-cell;
+    width: 60px;
+    height: 36px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 18px;
+  }
+  .main-menu .nav-text {
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    width: 180px;
+    text-align: left;
+  }
+  .active {
+    color: #edb5b5;
+  }
+  .activeB {
+    color: #edb5b5;
+    border-right: 2px solid #edb5b5;
+    border-top: none;
+    border-bottom: none;
+  }
+  ul.logout {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: auto;
+  }
+}

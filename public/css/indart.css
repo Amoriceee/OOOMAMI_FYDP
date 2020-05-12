@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+*, a {
+  font-family: 'Oswald', sans-serif;
+  font-weight: lighter;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+body {
+  overflow-x: hidden;
+}
+/*
+*SECTION TH*
+*/
+section#th {
+  padding: 4em 0em;
+  text-align: center;
+  height: 40vh;
+}
+section#th span {
+  font-family: 'Lato', sans-serif;
+ font-size: 14px;
+ text-transform: uppercase;
+}
+section#th h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 50px;
+  font-weight: 500;
+  text-align: center;
+  margin: 1em;
+  text-transform: capitalize;
+}
+section#th .hl {
+  height: 2px;
+  width: 100px;
+  background: black;
+  margin: 0 auto;
+}
+section#th p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  width: 550px;
+  margin: 40px auto;
+  text-align: center;
+  text-transform: capitalize;
+}
+section#th p.t {
+  font-size: 0.9em;
+  font-weight: 500;
+  margin: 20px auto;
+  text-transform: uppercase;
+}
+section#ban {
+  font-family: 'Lato', sans-serif;
+  height: 60vh;
+  width: 100%;
+  margin: 2em auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+section#con p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1em;
+  width: 550px;
+  margin: 40px auto;
+  text-align: justify;
+}

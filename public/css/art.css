@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+*, a {
+  font-family: 'Oswald', sans-serif;
+  font-weight: lighter;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+body {
+  overflow-x: hidden;
+}
+section {
+  padding: 2em 0em;
+}
+section:first {
+  padding: 4em 0em;
+}
+/*
+*LAYOUT*
+*/
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 60vh 50vh 50vh;
+  gap: 25px 25px;
+  width: 95%;
+  margin: 0 auto;
+}
+.grid-container-second {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 60vh 60vh;
+  gap: 50px;
+  width: 95%;
+  margin: 0 auto;
+}
+.sbt {
+  height: 60vh;
+  width: 100%;
+  margin: 0 auto;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.bt {
+  height: 100%;
+  width: 100%;
+  background: #ffd4c0;
+}
+.bt:first-child {
+  grid-row-start: 2;
+}
+.fbt {
+  height: 60vh;
+  width: 100%;
+  margin: 0 auto;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  background: url('/img/art/powder.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+}
+.bbt {
+  height: 60vh;
+  width: 100%;
+  margin: 0 auto;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  background: url('/img/art/coffee.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/*
+*DETAILS*
+*/
+.sbt-tag {
+  width: 120px;
+  height: 45px;
+  margin: 0 auto;
+  background: white;
+  z-index: 100;
+  position: relative;
+  top: -22px;
+  border: 1px solid black;
+}
+.sbt-tag h2 {
+  font-size: 1em;
+  text-align: center;
+  line-height: 44px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.sbt-img {
+  width: 50%;
+  height: 100%;
+  float: left;
+  position: relative;
+  top: -47px;
+  background-image: url('/img/art/citrus.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.sbt-des {
+  width: 50%;
+  height: 100%;
+  float: right;
+  background: #ffc0cc;
+  position: relative;
+  top: -47px;
+}
+.sbt-des h3 {
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 60vh;
+}
+.bt-img {
+  height: 100%;
+  position: relative;
+  top: 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.bt-des {
+  width: 100%;
+  height: 80px;
+  position: relative;
+  bottom: 80px;
+  background: white;
+  opacity: 0.6;
+}
+.bt-des h3 {
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 80px;
+}
+a button {
+  border: 2px solid #d78a90;
+  background: transparent;
+  color: #d78a90;
+  padding: 20px;
+  margin: 150px auto;
+  outline: none;
+  font-size: 34px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 8px;
+  height: 52px;
+  transition: 0.4s;
+}
+a button:hover {
+  color: white;
+  border: 2px solid white;
+}
+.imgl {
+  background-image: url('/img/art/avo-min.jpg');
+}
+.imgc {
+  background-image: url('/img/art/icecream-min.jpg');
+}
+.imgr {
+  background-image: url('/img/art/banana-min.jpg');
+}
+.imglt {
+  background-image: url('/img/art/papya-min.jpg');
+}
+.imgct {
+  background-image: url('/img/art/pineapple-min.jpg');
+}
+.imgrt {
+  background-image: url('/img/art/orange-min.jpg');
+}

@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Nunito&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+  font-family: 'Lato', sans-serif;
+  font-weight: lighter;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+#section-a, #section-b{
+  padding: 2em 1em;
+  text-align: center;
+}
+h1 {
+  font-size: 42px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: black;
+}
+h2 {
+  color: black;
+  margin: 0px;
+}
+p {
+  font-size: 16px;
+  margin: 15px auto;
+  padding: 0px 20px;
+  color: #101010;
+  text-align: justify;
+  text-align-last: center;
+}
+.lineGIT {
+  height: 3px;
+  width: 220px;
+  margin: 0 auto;
+  background-color: black;
+}
+.lineE {
+  height: 3px;
+  width: 60px;
+  margin: 0 auto;
+  background-color: black;
+}
+.lineP {
+  height: 3px;
+  width: 60px;
+  margin: 0 auto;
+  background-color: black;
+}
+.lineSM {
+  height: 3px;
+  width: 120px;
+  margin: 0 auto;
+  background-color: black;
+}
+#section-b {
+  padding: 2em 1em;
+}
+#section-b ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#section-b li {
+  margin-bottom: 1em;
+  background: #fff;
+  color: #333;
+}
+.card-content {
+  padding: .5em;
+}
+.tIco {
+  height: 80px;
+}
+.icons {
+  position: relative;
+  height: 20px;
+  top: 5px;
+}
+.inner-wrap p {
+  top: 5px;
+}
+.inner-wrap img {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+/* ContactUsForm section */
+.contactus {
+  margin: 0;
+  padding: 2em 1em;
+  background-color: #fafafa;
+}
+.contactus h1 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  text-align: center;
+  color: #494848;
+  font-size: 24px;
+}
+.contactus p {
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+  color: #494848;
+}
+form {
+  margin: 50px auto;
+}
+/* footer */
+.whiteDiv{
+  height: 30px;
+}
+/*** form controller **/
+label {
+  font-size: 16px;
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  color: #494848;
+}
+
+input, select, textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+textarea {
+  min-height: 200px;
+}
+
+.subBtn {
+  height: 50px;
+  padding: 12px;
+  border: 2px solid #edb5b5;
+  border-radius: 2px;
+  box-sizing: border-box;
+  background-color: #fafafa;
+  color: #edb5b5;
+  margin-top: 5px;
+  -webkit-text-stroke: .8px;
+}
+
+.subBtn:hover {
+  color: #f6c662;
+  border: 2px solid;
+  cursor: pointer;
+}
+
+.row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.col25 {
+  text-align: center;
+  float: left;
+  width: 20%;
+  margin-top: 4px;
+}
+
+.col75 {
+  float: left;
+  width: 60%;
+  margin-top: 4px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.alertSuccess, .alertMessage {
+  text-align: center;
+  font-size: 16px;
+  color: #f6c662;
+}
+
+button, input, textarea {
+  outline: none;
+}
+
+#section-d {
+  padding: 2em 1em;
+}
+
+#section-d h2 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  text-align: center;
+  color: black;
+  font-size: 24px;
+}
+
+@media (min-width: 768px) {
+
+  form {
+    width: 500px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 33%) 1fr;
+  }
+
+  .content-wrap,
+  #section-b ul {
+    grid-column-start: 2;
+    grid-column-end: 5;
+  }
+
+  #section-b ul {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #section-b li {
+    width: 420px;
+  }
+}

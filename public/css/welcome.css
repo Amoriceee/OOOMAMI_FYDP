@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Nunito&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: 'Lato', sans-serif;
+  font-weight: lighter;
+  text-decoration: none;
+}
+
+.animated {
+  animation-duration: 4.5s;
+  animation-fill-mode: backwards;
+}
+
+/** SECTION A **/
+
+section#sectionA {
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 98vh;
+  position: relative;
+  background-image: url("/img/background.jpg");
+  background-attachment: scroll;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+div.fl {
+  margin: 0 auto;
+  width: 30vh;
+  display: block;
+}
+
+img.fl {
+  width: 240px;
+}
+
+div.mt {
+  margin: 0 auto;
+  width: 320px;
+  padding-top: 60px;
+  text-align: justify;
+}
+
+div.lb {
+  margin: 0 auto;
+  width: 174px;
+  height: 52px;
+  padding-top: 40px;
+}
+
+.jn {
+  display: block;
+  text-align: center;
+  width: 140px;
+  padding: 1em;
+  font-style: italic;
+  border: 1px solid black;
+  border-radius: 2px;
+  background: #e5cfb6;
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.jn:hover {
+  background: transparent;
+}
+
+div.fom {
+  margin: 0 auto;
+  position: relative;
+  top: 170px;
+  width: 120px;
+}
+
+p.fom {
+  color: #e5cfb6;
+  text-align: center;
+  font-size: 12px;
+}
+
+#sectionA h1 {
+  font-size: 23px;
+  margin-bottom: 0px;
+}
+
+#sectionA h2 {
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+@media screen and (min-width: 768px) {
+
+  section#sectionA {
+    background-attachment: fixed;
+  }
+
+  div.mt {
+    margin: 0 auto;
+    width: 400px;
+    padding-left: 260px;
+    padding-top: 120px;
+  }
+
+  div.lb {
+    margin: 0 auto;
+    width: 140px;
+    padding-top: 0px;
+    padding-left: 440px;
+  }
+
+  div.fom {
+    margin: 0 auto;
+    position: relative;
+    top: 140px;
+    width: 120px;
+  }
+
+  #sectionA h1 {
+    font-size: 28px;
+    margin-bottom: 0px;
+  }
+
+  #sectionA h2 {
+    font-size: 24px;
+    margin-top: 0px;
+  }
+
+}
+
+/** SECTION B **/
+
+#sectionB {
+  padding: 2em 0em;
+  text-align: center;
+}
+
+#sectionB h1 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+#sectionB h2 {
+  font-size: 18px;
+  margin-top: 0px;
+}
+
+.pushY {
+  margin-top: 150px;
+}
+
+.disexp {
+  margin: 0 auto;
+  height: 275px;
+  width: 275px;
+  background-image: url("/img/discover.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.d2 {
+  background-image: url("/img/explore.jpg");
+}
+
+@media screen and (min-width: 768px) {
+
+  .disexp {
+    height: 400px;
+    width: 600px;
+  }
+
+}
+
+/** Carousel Styling **/
+.carousel {
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  height: 275px;
+  overflow: hidden;
+}
+
+.carousel > .items {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.carousel > .items > .item {
+  float: left;
+  width: 275px;
+  height: 275px;
+  box-sizing: border-box;
+  color: white;
+}
+
+@-webkit-keyframes newAnimation {
+  0% { margin-left: 0 }
+  100% { margin-left: calc(275px * 9) }
+}
+@keyframes newAnimation {
+  0% { margin-left: 0 }
+  100% { margin-left: calc(275px * 9) }
+}
+
+.carousel.autoplay > .items > .item:nth-of-type(1) {
+  animation-name: newAnimation;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-delay: 0s;
+  animation-play-state: running;
+}
+
+.ccc {
+  height: 275px;
+  width: 275px;
+  background-image: url("/img/s1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.c2 {
+  background-image: url("/img/s2.jpg");
+}
+
+.c3 {
+  background-image: url("/img/s3.jpg");
+}
+
+.c4 {
+  background-image: url("/img/s4.jpg");
+}
+
+.c5 {
+  background-image: url("/img/s5.jpg");
+}
+
+.c6 {
+  background-image: url("/img/s6.jpg");
+}
+
+.c7 {
+  background-image: url("/img/s7.jpg");
+}
+
+.c8 {
+  background-image: url("/img/s8.jpg");
+}
+
+.c9 {
+  background-image: url("/img/s9.jpg");
+}
+
+.c10 {
+  background-image: url("/img/s10.jpg");
+}
+
+/** SECTION C **/
+
+#sectionC {
+  padding: 2em 0em;
+  text-align: center;
+}
+
+#sectionC h1 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+#sectionC p {
+  font-size: 18px;
+  width: 480px;
+  margin: 0 auto;
+  text-align: justify;
+}

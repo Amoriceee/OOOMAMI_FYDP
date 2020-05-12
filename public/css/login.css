@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Nunito&display=swap');
+
+body {
+  background: #fdf7f7;
+}
+
+* {
+  font-family: 'Lato', sans-serif;
+  font-weight: lighter;
+  text-decoration: none;
+}
+
+.animated {
+  animation-duration: 4.5s;
+  animation-fill-mode: backwards;
+}
+
+/** SECTION A **/
+
+.container {
+  width: 325px;
+  height: 400px;
+  padding: 40px 15px;
+  margin: 20vh auto;
+  display: block;
+  border-radius: 15px;
+  border: 2px solid #f9e8e8;
+  text-align: center;
+  background: #fbf0f0;
+}
+
+.top-logo {
+  width: 180px;
+  margin: 0 auto;
+}
+
+form {
+  padding: 30px 0px;
+}
+
+input {
+  width: 80%;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid grey;
+  outline: none;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 16px;
+  background: #fbf0f0;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+button {
+  width: 80%;
+  height: 40px;
+  border: none;
+  border-radius: 15px;
+  background: #edb5b5;
+  color: white;
+  font-size: 16px;
+  margin: 20px auto;
+}
+
+p {
+  font-size: 10px;
+  margin-top: 8px;
+}
+
+a {
+  color: #edb5b5;
+}
+a:hover {
+  text-decoration: underline;
+}
+span {
+  display: block;
+  font-size: 0.9em;
+  color: #d57877;
+}

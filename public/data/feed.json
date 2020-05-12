@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "post_img": "/img/feed/",
+    "post_by_id": 1,
+    "post_by_name": "Hum",
+    "liked_by": [1,2,3,4,5]
+  },
+  {
+    "id": 2,
+    "post_img": "/img/feed/",
+    "liked_by": [1,2,3,4,5],
+
+  },
+]
