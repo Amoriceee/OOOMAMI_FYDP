@@ -29,8 +29,12 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/rec', function () {
       return view('recipes');
   });
+  Route::post('/rec', function () {
+      return view('recipes');
+  });
   Route::get('/rec/{id}/', 'RecipeController@indindex');
   Route::post('/rec/{id}/', 'RecipeController@htc');
+  Route::post('/rec2shop', 'ShoppingController@buildShoppingList');
   //COMMUNITY
   Route::get('/myc', function () {
       return view('community');
@@ -42,6 +46,7 @@ Route::group(['middleware' => 'auth'], function () {
   Route::post('cb', 'CookbookController@newCb');
   Route::get('/cb/{cbid}', 'CookbookController@index');
   Route::post('/cb/{cbid}', 'CookbookController@fA');
+  Route::get('/cb/{cbid}/del', 'CookbookController@delCookbook');
   //SHOPPING LIST ROUTES
   Route::get('/shopl', function () {
       return view('shoppinglist');

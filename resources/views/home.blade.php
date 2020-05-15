@@ -138,9 +138,9 @@
         </div>
       </div>
     </div>
-    <form id="rec-sea" class="search-container">
+    <form id="rec-sea" class="search-container" action="{{ url('/rec' )}}" method="POST" enctype="multipart/form-data">
       {{ csrf_field() }}
-      <input type="text" id="search-bar" placeholder="What are we eating today?">
+      <input name="sq" type="text" id="search-bar" placeholder="What are we eating today?" autocomplete="off">
       <button type="submit"><i class="fas fa-search"></i></button>
     </form>
   </section>

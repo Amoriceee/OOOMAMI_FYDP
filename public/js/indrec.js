@@ -110,6 +110,38 @@ function buildPost(item){
   }, function(err) {
     heart_but.innerHTML = '<i class="far fa-heart fa-ha"></i>';
   }));
+  append(hba, heart_but);
+  /** END **/
+
+  /** SHOPPING FORM **/
+  let shopf = createNode('form');
+  shopf.classList.add('rb');
+  shopf.classList.add('rb2');
+  shopf.method = "POST";
+  shopf.action = "/rec2shop";
+  var csrfVar = $('meta[name="csrf-token"]').attr('content');
+  $(shopf).append("<input name='_token' value='" + csrfVar + "' type='hidden'>");
+  let shopf_hid_id = createNode('input');
+  shopf_hid_id.name = "hid";
+  shopf_hid_id.type = "hidden";
+  shopf_hid_id.value = item.id;
+  append(shopf, shopf_hid_id);
+  let shopf_hid_name = createNode('input');
+  shopf_hid_name.name = "new_item";
+  shopf_hid_name.type = "hidden";
+  shopf_hid_name.value = item.title;
+  append(shopf, shopf_hid_name);
+  item.extendedIngredients.forEach(a => {
+    let shopf_hid = createNode('input');
+    shopf_hid.name = "hi[]";
+    shopf_hid.type = "hidden";
+    shopf_hid.value = a.amount + a.unit + " " + a.name;
+    append(shopf, shopf_hid);
+  });
+  let shopf_but = createNode('button');
+  shopf_but.type = 'submit';
+  shopf_but.innerHTML = '<i class="fas fa-cart-plus fa-ha"></i>';
+  append(shopf, shopf_but);
   /** END **/
 
   let tdiv = createNode('div');
@@ -166,18 +198,19 @@ function buildPost(item){
     append(tdiv, sus);
   }
 
-  append(hba, heart_but);
   append(mb, info);
   append(mb, inst);
   append(article, ic);
   append(article, title);
   append(article, serv);
   append(article, hba);
+  append(article, shopf);
   append(article, ulnut);
   append(article, mb);
   append(article, tdiv);
   append(recPost, article);
 }
+
 function buildSimilar(item){
   let simgrid = document.getElementById('sim_grid');
   let fa = createNode('a');

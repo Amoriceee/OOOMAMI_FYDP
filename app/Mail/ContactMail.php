@@ -37,9 +37,9 @@ class ContactMail extends Mailable
      */
     public function build()
     {
-            return $this->subject('Contact Form Submission Recieved')
-                    ->from('p1719222X@my365.dmu.ac.uk', 'OOOMAMI')
-                    ->to($this->email)
-                    ->markdown('emails.contactTemp');
+      return $this->subject('Contact Form Submission Recieved')
+                  ->from('p1719222X@my365.dmu.ac.uk', 'OOOMAMI')
+                  ->to($this->email)
+                  ->markdown('emails.contactTemp');
     }
 }

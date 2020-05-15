@@ -21,7 +21,7 @@ nav {
   height: 54px;
   width: 100%;
   text-align: center;
-  z-index: 100;
+  z-index: 1000;
   opacity: 1;
   outline: none;
   top: 0;

@@ -10,6 +10,7 @@ function cookbookInfo() {
   let data = fetch("../uploads/cookbook_data.json").then(resp => resp.json().then(function(a) {
     let mdata = a.filter(a => a.user_id == cID)[0];
     let fdata = mdata.cookbookList.filter(a => a.cookbook_id == cbID)[0];
+    setDelBut(fdata);
     buildCookbookInfo(fdata);
   }, function(err) {
     console.log(err);
@@ -41,6 +42,10 @@ function likedInfo() {
   }, function(err) {
     console.log(err);
   }));
+}
+
+function setDelBut(data){
+  document.getElementById('delbut').href = "/cb/" + data.cookbook_id + "/del";
 }
 
 function buildPost(c) {

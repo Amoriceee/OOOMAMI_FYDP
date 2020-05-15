@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Redirect;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
@@ -123,7 +124,7 @@ class CookbookController extends Controller
       }
     }
 
-    public function del(Request $request, $cbid)
+    public function delItem(Request $request, $cbid)
     {
       $uid = Auth::id();
       $htcData = Storage::disk('public')->exists('cookbook_data.json') ? json_decode(Storage::disk('public')->get('cookbook_data.json'), true) : [];
@@ -155,12 +156,39 @@ class CookbookController extends Controller
       }
     }
 
+    public function delCookbook(Request $request, $cbid)
+    {
+      $uid = Auth::id();
+      $slData = Storage::disk('public')->exists('cookbook_data.json') ? json_decode(Storage::disk('public')->get('cookbook_data.json'), true) : [];
+      $newArr = [];
+      $newCook = [];
+      $bol = false;
+      foreach($slData as $item) {
+        if ($item['user_id'] == $uid) {
+          $bol = true;
+          foreach($item['cookbookList'] as $sl) {
+            $item['cookbookList'] = [];
+            if ($sl['cookbook_id'] != $cbid) {
+              array_push($newCook, $sl);
+            }
+            $item['cookbookList'] = $newCook;
+          }
+        }
+        array_push($newArr, $item);
+      }
+
+      if($bol == true){
+        Storage::disk('public')->put('cookbook_data.json', json_encode($newArr));
+      }
+      return Redirect::to('/cb');
+    }
+
     public function fA(Request $request, $cbid) {
       if ($request->has('sub_add')) {
           $this->addCBR($request, $cbid);
           return redirect()->back();
       } else if ($request->has('sub_del')){
-          $this->del($request, $cbid);
+          $this->delItem($request, $cbid);
           return redirect()->back();
       } else if ($request->has('cb_but')){
           $this->editCb($request);

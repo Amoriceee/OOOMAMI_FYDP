@@ -15,14 +15,14 @@ function buildList(l) {
   let lid = l.list_id;
   let tdiv = createNode('div');
   tdiv.classList.add('list_card');
-  let hea = createNode('h2');
-  hea.innerHTML = l.list_name;
-  append(tdiv, hea);
   let axxx = createNode('a');
   axxx.classList.add('axxx');
   axxx.href = "/shopl/del/" + l.list_id;
   axxx.innerHTML = 'x';
   append(tdiv, axxx);
+  let hea = createNode('h2');
+  hea.innerHTML = l.list_name;
+  append(tdiv, hea);
   //FORM
   let form = createNode('form');
   form.id = "form_" + l.list_id;
@@ -127,13 +127,15 @@ function buildList(l) {
   sub.value = 'Save Changes';
   sub.type = 'submit';
 
+  let test = createNode('div');
   append(adiv, text);
   append(adiv, button);
   append(form, fdiv);
   append(form, adiv);
   append(form, sub);
   append(tdiv, form);
-  append(ml, tdiv);
+  append(test, tdiv);
+  append(ml, test);
 }
 
 function createNode(element) {

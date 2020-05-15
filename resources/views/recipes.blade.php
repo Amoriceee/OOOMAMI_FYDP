@@ -81,17 +81,20 @@
   <section class="pf">
     <form id="rec-sea" class="search-container">
       {{ csrf_field() }}
-      <input type="text" id="search-bar" placeholder="Pizza? Perhaps...">
+      <input type="text" id="search-bar" placeholder="Pizza? Perhaps..." autocomplete="off">
       <button type="submit"><i class="fas fa-search"></i></button>
     </form>
   </section class="pf">
   <section id="results_grid">
     <h1>Popular Right Now</h1>
     <div id="rg" class="rg">
-      
+
     </div>
+  </section>
+  <section id="nspc">
     <div class="res_pag">
       <button id="loff" value="-1"><<</button>
+      <span id="pg_id">Page 1</span>
       <button id="roff" value="1">>></button>
     </div>
   </section>
@@ -100,4 +103,16 @@
     var cID = parseInt("<?php echo Auth::user()->id;?>");
 </script>
 <script src="/js/rec.js"></script>
+@if(Request::isMethod('post'))
+  <script type="text/javascript">
+      query = "{{ Request::get('sq') }}";
+      getQueryRecipe(query);
+  </script>
+@else
+  <script type="text/javascript">
+    setTimeout(function() {
+      getHomeRecipeView();
+    }, 400);
+  </script>
+@endif
 @endsection

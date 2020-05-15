@@ -101,6 +101,11 @@
       </div>
     </div>
   </section>
+  <section>
+    <a id="delbut">
+      <button>DELETE THIS COOKBOOK</button>
+    </a>
+  </section>
 </main>
 <script type="text/javascript">
     var cID = parseInt("<?php echo Auth::user()->id;?>");

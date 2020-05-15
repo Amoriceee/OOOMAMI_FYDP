@@ -35,8 +35,13 @@ section#results_grid {
   grid-template-columns: repeat(5, 180px);
   grid-template-rows: repeat(3, 180px);
 }
+section#nspc {
+  padding: 0em;
+  margin-left: 141px;
+}
 .res_pag {
   margin: 10px auto;
+  width: 152px;
 }
 .res_pag button {
   width: 40px;

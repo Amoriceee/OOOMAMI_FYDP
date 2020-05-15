@@ -8,7 +8,8 @@ let usrint = [];
 let usrdie = [];
 let offset = 0;
 let query = "";
-
+let fun = "";
+let maxpg = 0;
 
 createFilterView();
 createFormSubLis();
@@ -16,8 +17,18 @@ createItemButLis(usrcus, "cuisine");
 createItemButLis(usrint, "intolerance");
 createItemButLis(usrdie, "diets");
 createFormButLis();
-buildPage();
-getHomeRecipeView();
+setData();
+createPageButListener();
+setPageNumber();
+
+function findFun() {
+  if(fun == "gqr") {
+    console.log(fun);
+    getQueryRecipe(query);
+  } else if (fun == "ghr") {
+    getHomeRecipeView();
+  }
+}
 
 function createItemButLis(arr, str) {
   let x = 'li button.' + str;
@@ -46,15 +57,35 @@ function createFormButLis() {
     getHomeRecipeView();
   });
   but_sea.addEventListener("click", function(){
-    getFilteredRecipies();
+    getHomeRecipeView();
   });
+}
+
+function createPageButListener() {
+  let but_l = document.getElementById('loff');
+  let but_r = document.getElementById('roff');
+  but_l.addEventListener("click", function(){
+    (offset == 0) ? offset = 0 : offset = offset - 1;
+    console.log(offset);
+    setPageNumber();
+    findFun();
+  });
+  but_r.addEventListener("click", function(){
+    (offset == maxpg) ? offset = maxpg : offset = offset + 1;
+    console.log(offset);
+    setPageNumber();
+    findFun();
+  });
+}
+
+function setPageNumber(){
+  document.getElementById('pg_id').innerHTML = "Page " + (offset + 1);
 }
 
 function createFormSubLis(){
   const fsub = document.getElementById('rec-sea');
   fsub.addEventListener("submit", function(e){
     e.preventDefault();
-    resetResults();
     let sb = document.getElementById('search-bar');
     getQueryRecipe(sb.value);
   });
@@ -136,37 +167,30 @@ function createFilterView(){
 }
 
 function getQueryRecipe(q) {
-  if(q != null) query = q;
+  (q != null) ? query = q : query = "";
+  resetResults();
+  fun = "gqr";
   let off = retOff();
   let ps = getURL();
-  let url = "https://api.spoonacular.com/recipes/complexSearch?" + ps + "&query=" + query + "&number=10&offset=" + off + "&sort=popularity&instructionsRequired=true&apiKey=9b63a2e942394efdbfea78104168032d";
+  let url = "https://api.spoonacular.com/recipes/complexSearch" + ps + "&query=" + query + "&number=15&offset=" + off + "&sort=popularity&apiKey=9b63a2e942394efdbfea78104168032d";
   let data = fetch(url).then(resp => resp.json().then(function(data) {
     data.results.forEach(buildPost);
+    maxpg = data.totalResults / 15;
   }, function(err) {
     console.log(err);
   }));
 }
 
-function getFilteredRecipies() {
-  let off = retOff();
-  let ps = getURL();
-  let url = "https://api.spoonacular.com/recipes/complexSearch" + ps + "&number=10&offset=" + off + "&sort=popularity&instructionsRequired=true&apiKey=9b63a2e942394efdbfea78104168032d";
-  let data = fetch(url)
-  .then(response => response.json().then(function(data) {
-    console.log(data.results);
-    data.results.forEach(buildPost);
-  })
-  .catch(err => {
-    console.log(err);
-  }));
-}
-
 function getHomeRecipeView() {
+  resetResults();
+  fun = "ghr";
   let off = retOff();
   let ps = getURL();
-  let url = "https://api.spoonacular.com/recipes/complexSearch" + ps + "&number=15&offset=" + off + "&sort=popularity&instructionsRequired=true&apiKey=9b63a2e942394efdbfea78104168032d";
-  let data = fetch(url)
-  .then(response => response.json().then(function(data) {
+  let url = "https://api.spoonacular.com/recipes/complexSearch" + ps + "&number=15&offset=" + off + "&sort=popularity&apiKey=9b63a2e942394efdbfea78104168032d";
+  let data = fetch(url).then(response => response.json().then(function(data) {
+    console.log(data);
+    maxpg = data.totalResults / 15;
+    console.log(maxpg);
     data.results.forEach(buildPost);
   })
   .catch(err => {
@@ -181,7 +205,6 @@ function getURL() {
   usrdie.forEach(a => die_url = die_url + "" + a + "&");
   let int_url = "&intolerance=";
   usrint.forEach(a => int_url = int_url + "" + a + "&");
-  x = cur_url + die_url + int_url
   return cur_url + die_url + int_url
 }
 
@@ -206,7 +229,7 @@ function buildPost(item) {
   append(res_grid, div);
 }
 
-function buildPage() {
+function setData() {
   let data = fetch("../uploads/int_data.json").then(resp => resp.json().then(function(a) {
     a.filter(f => f.user_id == cID).forEach(b => {
       if(b.Dairy == "false") usrint.push("Dairy");
@@ -224,7 +247,6 @@ function buildPage() {
     });
     let x = 'li button.intolerance';
     let but = document.querySelectorAll(x);
-    console.log(but);
     but.forEach(b => {
       if(usrint.includes(b.value)) b.classList.add('active');
     });
@@ -247,7 +269,6 @@ function buildPage() {
     });
     let x = 'li button.diets';
     let but = document.querySelectorAll(x);
-    console.log(but);
     but.forEach(b => {
       if(usrdie.includes(b.value)) b.classList.add('active');
     });

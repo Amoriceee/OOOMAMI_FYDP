@@ -152,6 +152,7 @@ section#rec_grid {
 form.rb {
   padding: 0.25em 0.5em;
   position: fixed;
+  top: 20vh;
   right: 0;
   margin: 0 auto;
   background: transparent;
@@ -161,6 +162,9 @@ form.rb {
   outline: none;
   text-transform: uppercase;
   cursor: pointer;
+}
+form.rb2 {
+  top: 26vh;
 }
 form.sim {
   padding: 0.25em 0.5em;
@@ -173,6 +177,9 @@ form.sim {
   text-transform: uppercase;
   cursor: pointer;
   display: inline-block;
+}
+form.sim button i.far:hover {
+  color: white;
 }
 form button {
   outline: none;

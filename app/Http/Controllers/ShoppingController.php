@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Storage;
 class ShoppingController extends Controller
 {
 
+  public function buildShoppingList(Request $request) {
+    $this->newList($request);
+    $this->li($request);
+    return redirect()->to('/shopl');
+  }
+
   public function newList(Request $request)
   {
     $request->validate([
@@ -22,7 +28,11 @@ class ShoppingController extends Controller
     foreach($slData as $item) {
       if ($item['user_id'] == $uid) {
         $bol = true;
-        $dat['list_id'] = Str::random(40);
+        if($request->hid){
+          $dat['list_id'] = $request->hid;
+        } else {
+          $dat['list_id'] = Str::random(40);
+        }
         $dat['list_name'] = $request->new_item;
         $dat['list_items'] = [];
         array_push($item['shoppingList'], $dat);

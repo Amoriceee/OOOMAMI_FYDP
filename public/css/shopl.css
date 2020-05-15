@@ -28,7 +28,6 @@ i.fa-shopping-basket {
 }
 a.axxx {
   position: relative;
-  top: -60px;
   left: 310px;
   color: #f6c662;
   font-weight: bolder;
@@ -75,7 +74,7 @@ section#my_lists {
 }
 div.list_card {
   min-width: 320px;
-  max-width: 600px;
+  max-width: 320px;
   margin: 40px auto;
   background: white;
   box-shadow: rgba(0,0,0,.15) 5px 10px 30px;
@@ -90,6 +89,7 @@ div.list_card h2 {
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: -.02em;
+  max-width: 320px;
 }
 
 div.list_card label.item_lab {
@@ -171,5 +171,9 @@ span.xspan button:hover {
   width: 100%;
   margin: 10px auto;
   height: 35px;
+  padding: 0.2em 0.1em;
+  color: #f6c662;
   text-align: center;
+  border: 1px solid #f6c662;
+  font-weight: bold;
 }
