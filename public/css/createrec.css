@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Nunito&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+  font-family: 'Lato', sans-serif;
+  font-weight: lighter;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+section {
+  padding: 2em 1em;
+}
+h3 {
+  text-align: center;
+  margin: 20px auto;
+  font-size: 0.9em;
+  font-weight: bolder;
+  color: #4a4a4a;
+}
+input:focus::-webkit-input-placeholder {
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+i.fa-book-open {
+  text-align: center;
+  display: block;
+  font-size: 24px;
+  margin: 15px;
+  color: #f6c662;
+}
+input#new_cb {
+  border: 1px solid #CCC;
+  border-radius: 1px;
+  text-align: center;
+  padding: 8px;
+  width: 150px;
+  margin: -1px auto;
+  left: 0;
+  position: relative;
+  display: block;
+  font-weight: 500;
+}
+input#add_cb {
+  border: 1px solid #CCC;
+  border-radius: 1px;
+  text-align: center;
+  padding: 8px;
+  width: 168px;
+  margin: -1px auto;
+  left: 0;
+  position: relative;
+  display: block;
+  font-weight: 500;
+}
+form#newrec {
+  width:550px;
+  padding: 1em 0.5em;
+  border-bottom: 1px solid #f6c662;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+  padding-bottom: 15px;
+  margin: 0 auto;
+  font-size: 2em;
+}

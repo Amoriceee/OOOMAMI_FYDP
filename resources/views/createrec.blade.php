@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('styling')
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel='stylesheet' href='/css/all.css'>
-<link rel="stylesheet" href="/css/myc.css">
 <link rel="stylesheet" href="/css/navbar.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,600'>
+<link rel="stylesheet" href="/css/createrec.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 @endsection
 
@@ -76,32 +76,20 @@
   </ul>
 </nav>
 <main class="area">
-  <section>
-    <div class="create-wrapper">
-      <a href="#" class="jcarousel-control-prev" data-jcarouselcontrol="true">‹</a>
-      <div class="create">
-        <a href="/myc/create">Create<br>Recipe</a>
-      </div>
+  <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
+  <section id="new_cb">
+    <div class="form-group">
+      <form id="newrec" action="" method="POST" enctype="multipart/form-data">
+        {{ csrf_field() }}
+        <input type="text" name="new_rec" id="new_rec" placeholder="Cookbook Name" autocomplete="off" required>
+        <input type="text" name="new_rec" id="new_rec" placeholder="Cookbook Name" autocomplete="off" required>
+        <input type="submit" id="add_rec" value="Create New Cookbook" name="cb_rec">
+      </form>
     </div>
-    <div class="jcarousel-wrapper">
-      <div class="jcarousel" data-jcarousel="true">
-        <ul id="myrec">
-          <li><img src="https://www.fillmurray.com/g/300/150" alt="Image 1" class="img-thumbnail img-responsive"></li>
-          <li><img src="https://www.fillmurray.com/g/300/150" alt="Image 2" class="img-thumbnail img-responsive"></li>
-          <li><img src="https://www.fillmurray.com/g/300/150" alt="Image 3" class="img-thumbnail img-responsive"></li>
-          <li><img src="https://www.fillmurray.com/g/300/150" alt="Image 4" class="img-thumbnail img-responsive"></li>
-          <li><img src="https://www.fillmurray.com/g/300/150" alt="Image 5" class="img-thumbnail img-responsive"></li>
-          <li><img src="https://www.fillmurray.com/g/300/150" alt="Image 6" class="img-thumbnail img-responsive"></li>
-        </ul>
-      </div>
-      <a href="#" class="jcarousel-control-next" data-jcarouselcontrol="true">›</a>
-    </div>
-  </section>
-  <section>
-
   </section>
 </main>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='https://sorgalla.com/jcarousel/dist/jquery.jcarousel.min.js'>
-</script><script  src="/js/scroller.js"></script>
+<script type="text/javascript">
+    var cID = parseInt("<?php echo Auth::user()->id;?>");
+</script>
+<script src="/js/createrec.js"></script>
 @endsection

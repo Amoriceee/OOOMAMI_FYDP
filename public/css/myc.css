@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Nunito&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+  font-family: 'Lato', sans-serif;
+  font-weight: lighter;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+section {
+  padding: 1em 0em;
+}
+.create-wrapper {
+    margin: 20px auto;
+    position: relative;
+    float: left;
+    width: 160px;
+    border-right: 1px solid #CCC;
+    display: inline-block;
+}
+.create {
+  border-radius: 50%;
+  height: 82px;
+  width: 82px;
+  border: 1px solid #CCC;
+  box-sizing: border-box;
+  margin-left: 60px;
+}
+.create a {
+  position: relative;
+  top: 20px;
+  left: 23px;
+  font-size: 0.7em;
+  text-align: center;
+  font-weight: bolder;
+  color: #CCC;
+}
+.jcarousel-wrapper {
+    display: inline-block;
+    margin: 20px auto;
+    position: relative;
+    float: right;
+    width: calc(100% - 162px);
+    border-radius: 5px;
+}
+
+/** Carousel **/
+
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-right: 60px;
+}
+.jcarousel ul {
+    width: 10000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.jcarousel li {
+    border-radius: 50%;
+    width: 80px;
+    float: left;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    margin: 0px 20px;
+}
+.jcarousel li:first-child {
+    margin-left: 10px;
+}
+.jcarousel img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+/** Carousel Controls **/
+.jcarousel-control-prev,
+.jcarousel-control-next {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background: #f6c662;
+    color: #fff;
+    text-decoration: none;
+    font: 24px/27px Arial, sans-serif;
+    border-radius: 30px;
+}
+
+.jcarousel-control-prev {
+    left: 15px;
+}
+
+.jcarousel-control-next {
+    right: 15px;
+}

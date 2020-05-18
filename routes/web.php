@@ -39,6 +39,9 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/myc', function () {
       return view('community');
   });
+  Route::get('/myc/create', function() {
+    return view('createrec');
+  });
   //COOKBOOK ROUTES
   Route::get('/cb', function () {
       return view('cookbook');
